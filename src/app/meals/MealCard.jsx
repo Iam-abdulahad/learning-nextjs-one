@@ -1,10 +1,14 @@
+import Image from "next/image";
+
 export default function MealCard({ meal }) {
   return (
     <div className="border rounded-xl overflow-hidden shadow-sm">
-      <img
+      <Image
         src={meal.strMealThumb}
         alt={meal.strMeal}
-        className="w-full h-48 object-cover"
+        height={640}
+        width={640}
+        className="w-full object-cover"
       />
 
       <div className="p-4">
