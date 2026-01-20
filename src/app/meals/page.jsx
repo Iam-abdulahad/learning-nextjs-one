@@ -1,6 +1,11 @@
 import MealSearch from "./MealSearch";
 import MealCard from "./MealCard";
 
+export const metadata = {
+  title: "Next Js learning | Meals",
+  description: "A simple meal finder app built with Next.js",
+};
+
 export default async function Page({ searchParams }) {
   const { q = "" } = await searchParams;
 
@@ -18,7 +23,7 @@ export default async function Page({ searchParams }) {
 
   return (
     <div className="p-6 max-w-6xl mx-auto">
-      <h1 className="text-3xl font-bold mb-6">🍽 Meal Finder</h1>
+      <h1 className="text-3xl font-bold mb-6">Meal Finder</h1>
 
       <MealSearch defaultValue={q} />
 

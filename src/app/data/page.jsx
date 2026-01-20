@@ -1,11 +1,17 @@
 import Link from "next/link";
 
+export const metadata = {
+  title: "Next Js learning | Users",
+  description: "A simple meal finder app built with Next.js",
+};
+
 export default async function Page() {
   const res = await fetch("https://jsonplaceholder.typicode.com/users", {
     cache: "no-store",
   });
 
   const posts = await res.json();
+  
 
   return (
     <div className="p-6">

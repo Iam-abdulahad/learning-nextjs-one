@@ -1,6 +1,20 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
 
+export async function generateMetadata({ params }) {
+  const { id } = await params;
+ 
+  // fetch post information
+  const user = await fetch(`https://jsonplaceholder.typicode.com/users/${id}`).then((res) =>
+    res.json()
+  )
+ 
+  return {
+    title: user.name,
+    description: user.email,
+  }
+}
+
 export default async function Page({ params }) {
   const { id } = await params;
 
